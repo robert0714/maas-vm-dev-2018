@@ -1,4 +1,6 @@
 # maas-vm-dev-2018
+針對作業系統為Windows使用者進行設計的開發用VM<br/>
+使用者可以使用遠端桌面進行連線
 # Prerequisite
 ## install Vagrant
 https://www.vagrantup.com/downloads.html
