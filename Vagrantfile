@@ -13,6 +13,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 #  config.vm.network "public_network", ip: "192.168.0.16", :netmask => "255.255.255.0"
   config.vm.network "private_network", ip: "192.168.97.16" , :netmask => "255.255.255.0"
   config.vm.provision "shell", inline: <<-SHELL
+timedatectl set-timezone Asia/Taipei
 localectl set-locale LANG=zh_TW.UTF-8
 yum install -y epel-release
 yum check-update
@@ -60,9 +61,9 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 # install of git
 yum install -y git
-git clone  https://github.com/robert0714/maas-dev-docekr-V2.git /home/vagrant/Desktop/
+git clone  https://github.com/robert0714/maas-dev-docekr-V2.git /home/vagrant/Desktop/maas-dev-docekr-V2
 cd   /home/vagrant/Desktop/
-docker-compose -f  /home/vagrant/Desktop/docker-compose.yml  up  -d
+docker-compose -f  /home/vagrant/Desktop/maas-dev-docekr-V2/docker-compose.yml  up  -d
 
 # javaをインストール
 yum -y install java-1.8.0-openjdk
